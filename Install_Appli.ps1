@@ -117,7 +117,7 @@ if($prop -ne 0) {
 } elses {
     Write-Host "        OneDrive:       0"
 }
-
+Start-Sleep -Seconds 2
 # Layout
 if (!(Test-Path -path "C:\temp")) {New-Item "C:\temp" -Type Directory}
 Copy-Item "C:\RESTANT_A_FAIRE\pstools\layout2023.xml" -Destination "C:\temp" -Recurse | Out-Null
