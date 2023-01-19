@@ -155,3 +155,21 @@ Write-Host "`n`n        Entree pour dire: Au revoir"
 $Host.UI.ReadLine()
 Exit-PSSession
 exit
+
+<#
+    #region MAJ Microsoft Store
+    C_Console -off 13
+    Write-Host "    MAJ Windows Store" -f cyan
+    winget upgrade --all
+    #endregion
+    #region Ne pas toucher
+    try {
+        if($form[0].dta -notmatch "interiale.intra") {
+            Add-Computer -LocalCredential interiale.intra\adm.XX -DomainName interiale.intra -OUPath "OU=testOU" -Credential interiale.intra\adm.XX
+        }
+    } catch {
+        $output += "Domain:     NOT OK"
+    } finally {
+        $output += "Domain:     OK"
+    }
+#>
