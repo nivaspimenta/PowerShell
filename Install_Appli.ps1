@@ -150,6 +150,7 @@ CConsole
 
 # Supprimer dossier RESTANT_A_FAIRE
 Remove-Item -Path "C:\RESTANT_A_FAIRE" -Force -Recurse
+[Console]::SetCursorPosition(0,0)
 Write-Host "        Installation terminé" -f cyan
 Write-Host "`n`n        Entree pour dire: Au revoir"
 $Host.UI.ReadLine()
