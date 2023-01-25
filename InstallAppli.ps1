@@ -33,7 +33,7 @@ $prog = @(
 )
 
 Function CConsole {
-    for ($x = 0; $x -le 150; $x++) {
+    for ($x = 0; $x -le 90; $x++) {
         for ($y = 0; $y -le 25; $y++) {
             [Console]::SetCursorPosition($x, $y)
             Write-Host " " -BackgroundColor Black
@@ -119,7 +119,7 @@ Set-itemproperty -Path 'HKLM:\HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Win
 $prop = Get-ItemProperty -Path 'HKLM:\HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\OneDrive' -name DisableFileSyncNGSC | Select-Object DisableFileSyncNGSC
 if ($prop -ne 0) {
     Write-Host "        OneDrive:       1"
-} elses {
+} else {
     Write-Host "        OneDrive:       0"
 }
 Start-Sleep -Seconds 2
